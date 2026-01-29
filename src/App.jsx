@@ -1,9 +1,5 @@
-import React from "react";
-import KanbanBoard from "./Components/KanbanBoard.jsx";
-import Column from "./Components/Column.jsx";
-import TaskCard from "./Components/TaskCard.jsx";
-import AddTask from "./Components/AddTask.jsx";
 import "./App.css";
+import KanbanBoard from "./Components/KanbanBoard.jsx";
 export default function App() {
 	return (
 		<div>
@@ -13,11 +9,6 @@ export default function App() {
 
 			<div className="kanban-board">
 				<KanbanBoard />
-				<AddTask />
-				<div className="kanban-board-information">
-					<Column />
-					<TaskCard />
-				</div>
 			</div>
 		</div>
 	);

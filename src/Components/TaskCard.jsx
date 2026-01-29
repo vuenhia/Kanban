@@ -1,3 +1,4 @@
-export default function TaskCard() {
-	return <div>This is the TaskCard component.</div>;
+export default function TaskCard({ task }) {
+	// Need props from addtask to display user submitted task
+	return <div className="task-card">{task.text}</div>;
 }

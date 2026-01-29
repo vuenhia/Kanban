@@ -8,20 +8,105 @@ body {
 	color: #ffffff;
 }
 
-.header {
-	background-color: #282c34;
-	min-height: 60px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font-size: 28px;
-	font-weight: bold;
+/* Addtask.jsx */
+.add-task {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	padding: 15px;
+	border-radius: 8px;
+	color: #cbd5e1;
+	cursor: pointer;
+	text-align: center;
+	max-width: 300px;
+	margin: 0 auto;
+	padding: 15 20px;
+	transition: all 0.3s ease;
 }
 
-.kanban-board {
+.add-Task-Clickable {
+	cursor: pointer;
+	display: block;
 }
-.kanban-board-information {
-	color: white;
+.add-task-input {
+	padding: 10px 5px;
+	margin: 20px 0;
+	min-height: 100px;
+	border-radius: 5px;
+}
+
+.add-task-submit {
+	display: flex;
+	justify-content: center;
+}
+.add-task-submit form {
+}
+.add-task-submit button {
+	margin: 10px;
+	padding: 15px;
+	border-radius: 5px;
+	background: #0f172a;
+	color: #cbd5e1;
+}
+.add-task-submit button:hover {
+	cursor: pointer;
+}
+
+/* App.jsx */
+.header {
+	padding: 25px;
+	font-size: 24px;
+	text-align: center;
+}
+.kanban-board-main {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+}
+.kanban-board {
+	padding: 20px;
+}
+
+.kanban-board-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	text-align: center;
+	padding: 20px;
+	height: 400px;
+}
+
+/* Column.jsx */
+.column {
+	background: #1e293b;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 16px;
+	padding: 16px;
+
+	height: 100%;
+}
+
+.column-header {
+	padding: 16px;
+	font-size: 18px;
+	color: #22d3ee;
+}
+.column-tasks {
+	color: #cbd5e1;
+	background: #0f172a;
+	border-radius: 8px;
+	font-size: 20px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 0 15px;
+}
+/* TaskCard.jsx */
+.task-card {
+	padding: 10px 20px;
+	margin: 25px;
+	border-radius: 5px;
+	min-height: 100px;
+	border-left: 2px solid #22d3ee;
+	text-align: start;
 }
