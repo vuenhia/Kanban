@@ -25,6 +25,8 @@ Saving Data
 
 
 What I Learned
+
+
 State Management
 - Managing nested state objects for multiple columns
 - Updating state immutably during drag‑and‑drop
