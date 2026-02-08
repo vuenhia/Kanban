@@ -24,7 +24,7 @@ Saving Data
 - No save button needed
 
 
-🧠 What I Learned
+What I Learned
 State Management
 - Managing nested state objects for multiple columns
 - Updating state immutably during drag‑and‑drop
@@ -53,7 +53,7 @@ Debugging
 - Ensuring edit mode and drag mode don’t conflict
 
 
-🔮 Future Improvements
+Future Improvements
 - Reordering tasks within the same column
 - Column color themes
 - Task priority levels
@@ -63,7 +63,6 @@ Debugging
 
   
 
-🎯 Why I Built This
+Why I Built This
 
-I wanted a simple, clean, and highly responsive Kanban board that feels good to use — something lightweight but polished, with smooth drag‑and‑drop and intuitive editing.
-Instead of using an existing tool, I built my own to deepen my understanding of React state, UI patterns, and real‑world component architecture.
+I wanted to build a Kanban Board to create a workflow for future projects that I want to build. I also built this as a challenge to broaden my understanding of React
