@@ -34,10 +34,19 @@ export default function AddTask({ handleNewTask }) {
 							onChange={(e) => setTaskInput(e.target.value)}
 							placeholder="Add Task"
 							value={taskInput}
+							onKeyDown={(e) => {
+								if (e.key === "Enter" && !e.shiftKey) {
+									e.preventDefault();
+									handleSubmit(e);
+								}
+							}}
 						/>
-						<div>
+						<div className="add-task-buttons">
 							<button type="submit">Submit</button>
-							<button onClick={handleCancel}>Cancel</button>
+							<button type="button" onClick={handleCancel}>
+								Cancel
+							</button>
+
 							{console.log(taskInput)}
 						</div>
 					</form>
