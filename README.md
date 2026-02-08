@@ -18,19 +18,10 @@ Workflow Columns
 - Done
 
   
-Persistence
+Saving Data
 - Automatically saves all tasks to localStorage
 - Restores tasks instantly on refresh
 - No save button needed
-
-  
-UI/UX Highlights
-- Clean, modern layout
-- Responsive design
-- Smooth drag animations
-- Word‑wrapping and overflow‑safe task cards
-- Edit mode with auto‑focus
-- Enter‑to‑submit for both adding and editing tasks
 
 
 🧠 What I Learned
@@ -61,14 +52,6 @@ Debugging
 - Handling Enter key behavior in textareas and inputs
 - Ensuring edit mode and drag mode don’t conflict
 
-  
-
-🛠 Tech Stack
-- React (hooks + component architecture)
-- CSS Flexbox for layout
-- Vite for fast development
-- localStorage for persistence
-  
 
 🔮 Future Improvements
 - Reordering tasks within the same column
