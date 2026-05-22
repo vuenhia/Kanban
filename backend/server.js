@@ -1,18 +1,26 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const connectDB = require("./config/db");
-const cors = require("cors");
+// Import dependencies
+const express = require('express');
+const dotenv = require('dotenv');
+const connectDb = require('./config/db');
+const cors = require('cors');
 
+//Initialize environment + database
 dotenv.config();
-connectDB();
+connectDb();
 
+// Create Express App
 const app = express();
-app.use(express.json());
+//Middleware
+app.use(express.json);
 app.use(cors());
 
-app.get("/", (req, res) => {
-	res.send("API is running");
+// First API route
+app.get('/', (req,res) => {
+	res.send("API is running")
 });
 
+// Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+
+
