@@ -32,7 +32,7 @@ export default function Column({
 				<div className="column-task-card" draggable={false}>
 					{tasks.map((task) => (
 						<TaskCard
-							key={task.id}
+							key={task._id}
 							task={task}
 							handleDrag={handleDrag}
 							columnName={columnName}

@@ -35,12 +35,12 @@ export default function TaskCard({
 						onKeyDown={(e) => {
 							if (e.key === "Enter") {
 								e.preventDefault();
-								handleEdit(task.id, columnName, editText);
+								handleEdit(task._id, columnName, editText);
 								setIsEditing(false);
 							}
 						}}
 						onBlur={() => {
-							handleEdit(task.id, columnName, editText);
+							handleEdit(task._id, columnName, editText);
 							setIsEditing(false);
 						}}
 						autoFocus
@@ -53,7 +53,7 @@ export default function TaskCard({
 			<div className="task-actions">
 				<button
 					className="task-cards-delete-btn"
-					onClick={() => handleDelete(task.id, columnName)}
+					onClick={() => handleDelete(task._id, columnName)}
 				>
 					Delete
 				</button>

@@ -7,11 +7,9 @@ export default function AddTask({ handleNewTask }) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (taskInput.trim()) {
-			handleNewTask({
-				id: Date.now(),
-				text: taskInput,
-			});
-			(setTaskInput(""), setClicked(false));
+			handleNewTask(taskInput);
+			setTaskInput("");
+			setClicked(false);
 		}
 	};
 
