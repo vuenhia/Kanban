@@ -12,7 +12,9 @@ export default function KanbanBoard() {
 
 	useEffect(() => {
 		const getTask = async () => {
-			const response = await fetch("http://localhost:5000/api/tasks");
+			const response = await fetch(
+				"https://portfolio-bice-five-i4ltcvxltn.vercel.app/",
+			);
 			const data = await response.json();
 
 			const organizedTasks = {
@@ -51,7 +53,7 @@ export default function KanbanBoard() {
 		}
 		try {
 			const response = await fetch(
-				`http://localhost:5000/api/tasks/${draggedTask._id}`,
+				`https://portfolio-bice-five-i4ltcvxltn.vercel.app/${draggedTask._id}`,
 				{
 					method: "PUT",
 					headers: {
@@ -81,7 +83,7 @@ export default function KanbanBoard() {
 	const handleDelete = async (taskId, columnName) => {
 		try {
 			const response = await fetch(
-				`http://localhost:5000/api/tasks/${taskId}`,
+				`https://portfolio-bice-five-i4ltcvxltn.vercel.app/${taskId}`,
 				{
 					method: "DELETE",
 				},
@@ -98,7 +100,7 @@ export default function KanbanBoard() {
 	const handleEdit = async (taskId, columnName, newText) => {
 		try {
 			const response = await fetch(
-				`http://localhost:5000/api/tasks/${taskId}`,
+				`https://portfolio-bice-five-i4ltcvxltn.vercel.app/${taskId}`,
 				{
 					method: "PUT",
 					headers: {
@@ -123,16 +125,19 @@ export default function KanbanBoard() {
 	};
 	const handleNewTask = async (text) => {
 		try {
-			const response = await fetch("http://localhost:5000/api/tasks", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
+			const response = await fetch(
+				"https://portfolio-bice-five-i4ltcvxltn.vercel.app/",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						text,
+						status: "toDo",
+					}),
 				},
-				body: JSON.stringify({
-					text,
-					status: "toDo",
-				}),
-			});
+			);
 
 			const data = await response.json();
 
