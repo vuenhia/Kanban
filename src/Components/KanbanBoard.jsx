@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Column from "./Column.jsx";
 import AddTask from "./AddTask.jsx";
 
-const API_URL = "https://kanbanbackend-9w5v.onrender.com";
+const API_URL = "https://kanbanbackend-9w5v.onrender.com/api/tasks";
 
 export default function KanbanBoard() {
 	const [tasks, setTasks] = useState({
@@ -12,6 +12,7 @@ export default function KanbanBoard() {
 		done: [],
 	});
 
+	// Get tasks from backend
 	useEffect(() => {
 		const getTask = async () => {
 			try {
@@ -50,6 +51,7 @@ export default function KanbanBoard() {
 	const handleDrag = (task, sourceColumn) => {
 		setDraggedTask(task);
 		setSourceColumn(sourceColumn);
+
 		console.log("Task is " + task.text);
 	};
 
@@ -58,6 +60,7 @@ export default function KanbanBoard() {
 			return;
 		}
 
+		// Don't do anything if dropped in same column
 		if (sourceColumn === targetColumn) {
 			setDraggedTask(null);
 			setSourceColumn(null);
@@ -98,6 +101,7 @@ export default function KanbanBoard() {
 		}
 	};
 
+	// Delete task
 	const handleDelete = async (taskId, columnName) => {
 		try {
 			const response = await fetch(`${API_URL}/${taskId}`, {
@@ -117,6 +121,7 @@ export default function KanbanBoard() {
 		}
 	};
 
+	// Edit task
 	const handleEdit = async (taskId, columnName, newText) => {
 		try {
 			const response = await fetch(`${API_URL}/${taskId}`, {
@@ -146,6 +151,7 @@ export default function KanbanBoard() {
 		}
 	};
 
+	// Create new task
 	const handleNewTask = async (text) => {
 		try {
 			const response = await fetch(API_URL, {
