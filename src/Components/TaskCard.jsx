@@ -50,14 +50,16 @@ export default function TaskCard({
 				)}
 			</div>
 
-			<div className="task-actions">
-				<button
-					className="task-cards-delete-btn"
-					onClick={() => handleDelete(task._id, columnName)}
-				>
-					Delete
-				</button>
-			</div>
+			{!isEditing && (
+				<div className="task-actions">
+					<button
+						className="task-cards-delete-btn"
+						onClick={() => handleDelete(task._id, columnName)}
+					>
+						Delete
+					</button>
+				</div>
+			)}
 		</div>
 	);
 }
